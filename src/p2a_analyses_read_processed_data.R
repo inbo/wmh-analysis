@@ -27,7 +27,7 @@ data$yday <- as.numeric(data$yday)
 data$origin <- as.character(data$origin)
 
 # Gather Swedish data with all the same columns as df "data" created above
-source('sidescript_readSwedes.R')
+source("src/sidescript_readSwedes.R")
 swedes <- subset(swedes,swedes$long != 0 & is.na(swedes$long) == FALSE)
 
 # Combine al datasets
@@ -42,7 +42,7 @@ rem <- which(data$name == "SW_F1" & data$dt %in% touts)
 data <- data[-rem,]
 
 # Read custom-made functions for computing trajectory (i.e. between fixes) movement statistics
-source('pt2pt_fxns.R')
+source("src/pt2pt_fxns.R")
 
 ## define functions to calculate forward distances and duration
 calcdist <- function(x) pt2pt.distance(longitude=x$long,latitude=x$lat)
@@ -73,7 +73,7 @@ data$spd.b <- data$dist.b/data$dur.b
 data$dir <- as.numeric(unlist(v3))
 
 ### Calculate Daily Statistics
-source('sidescript_CalcDailyStats.R')
+source("src/sidescript_CalcDailyStats.R")
 data$date <- as.Date(data$date,tz='UTC')
 
 #### STEP 3: DISTINGUISH DAY/NIGHT OBSERVATIONS
@@ -105,7 +105,7 @@ data <- data[-which(data$name == "Ben" & data$dt == as.POSIXct(strptime("2016-11
 #### STEP 4: ANNOTATE GEOGRAPHICAL INFORMATION
 ################################################
 library(rgdal);library(sp);library(raster)
-countries <- shapefile("./Maps/ne_50m_admin_0_countries/ne_50m_admin_0_countries.shp")
+countries <- shapefile("data/maps/ne_50m_admin_0_countries/ne_50m_admin_0_countries.shp")
 
 countries <- countries[countries$continent %in% c("Europe","Africa"),]
 
