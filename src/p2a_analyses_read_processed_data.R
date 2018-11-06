@@ -1,12 +1,14 @@
 library(lubridate);library(circular);library(ggplot2)
 library(maptools);library(lattice);library(fossil)
 library(RColorBrewer)
+library(here)
+library(readr)
 
 #### STEP 1: GATHER ALL DATA
 #############################
 # gather INBO and WGK data from csv produced previously, containing tracks
 # resampled to hourly intervals
-data <- read.csv("data/MH-resampled-23092017.csv")
+data <- read_csv(here("data", "MH-resampled-23092017.csv"))
 data <- data[,c("dev","name","dt","lat","long","alt","date","mth","yr","season","yday","migr","origin","indday")]
 
 data$dt <- as.POSIXct(strptime(data$dt, format="%Y-%m-%d %H:%M:%S"), tz='UTC')
