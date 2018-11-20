@@ -1,5 +1,5 @@
 
-swedes <- read.csv('data/swedes.csv')
+swedes <- read_csv(here("data", "swedes.csv"))
 swedes <- subset(swedes,swedes$filter == 1)
 
 dev <- c("Fe71-07","Ma72-07","Juv73-08","Ma74-08","Fe72-09","Fe65-09") 
