@@ -1,4 +1,4 @@
-dem <- raster("data/maps/alt_30s_bil/alt.bil")
+dem <- raster(here("data", "maps", "alt_30s_bil", "alt.bil"))
 
 latlimits <- c(min(data$lat)-0.5,max(data$lat)+0.5) 
 longlimits <- c(min(data$long)-0.5,max(data$long)+0.5) 
