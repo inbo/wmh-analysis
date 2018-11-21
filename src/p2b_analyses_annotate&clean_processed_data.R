@@ -6,7 +6,7 @@
 
 #### STEP 1: Process Dutch/Belgian annotation data
 ###################################################
-behaviour <- read.csv('annotation-v5.csv')
+behaviour <- read_csv(here("data","annotation-v5.csv"))
 behaviour$date <- as.Date(behaviour$date)
 colnames(behaviour)[1] <- "name"
 
@@ -24,7 +24,7 @@ behaviour$type2 <- ifelse(behaviour$type2 %in% c("move","pre-migration") & behav
 
 #### STEP 2: Process Swedish annotation data
 ###################################################
-swedes.behaviour <- read.csv('annotation_swedes-v4.csv')
+swedes.behaviour <- read_csv(here("data","annotation_swedes-v4.csv"))
 swedes.behaviour$date <- as.Date(swedes.behaviour$date)
 colnames(swedes.behaviour)[1] <- "name"
 
@@ -100,7 +100,7 @@ data <- data[order(data$name,data$dt),]
 data$season <- factor(as.factor(data$season),levels=c("autumn","winter","spring","summer"),labels=c("Autumn","Winter","Spring","Summer"))
 
 ### Generate coordinates and durations of all stopovers
-source('sidescript_CalcStopovers.R')
+source(here("src","sidescript_CalcStopovers.R"))
 
 data$pop <- ifelse(data$origin == "LUND","SW","LC")
 segs$pop <- ifelse(segs$origin == "LUND","SW","LC")
@@ -132,3 +132,4 @@ data$ID <- ifelse(is.na(data$ID)==TRUE,as.character(data$name),as.character(data
 migration <- migration[order(migration$name,migration$dt),]
 data <- data[order(data$name,data$dt),]
 move <- move[order(move$name,move$dt),]
+
