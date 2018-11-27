@@ -17,6 +17,28 @@ data collection by [INBO](www.inbo.be/en) as part of the Flemish contribution to
 
 ## Getting started
 ### Packages
+In order to run the scripts properly, the installation of the following R-packages is required:
+
+* car
+* circular
+* emmeans
+* fossil
+* ggplot2
+* gridExtra
+* here
+* lattice
+* lme4
+* lubridate
+* maptools
+* MASS
+* raster
+* RColorBrewer
+* readr
+* reshape2
+* rgdal
+* sp
+* zoo
+
 
 ### Data
 
