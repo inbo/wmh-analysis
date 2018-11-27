@@ -17,7 +17,7 @@ data collection by [INBO](www.inbo.be/en) as part of the Flemish contribution to
 ```
 |-- data                <- Data used in this analysis
     |--maps
-|-- scr                 <- Scripts generated for this analysis
+|-- src                 <- Scripts generated for this analysis
 |-- gitignore           <- Files and directories to be ignored by git
 |-- LICENSE             <- Repository license
 |-- README.md           <- Description of this repository
