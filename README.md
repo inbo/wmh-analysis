@@ -14,6 +14,16 @@ data collection by [INBO](www.inbo.be/en) as part of the Flemish contribution to
 
 ## Repo structure
 
+```
+|-- data                <- Data used in this analysis
+    |--maps
+|-- scr                 <- Scripts generated for this analysis
+|-- gitignore           <- Files and directories to be ignored by git
+|-- LICENSE             <- Repository license
+|-- README.md           <- Description of this repository
+|-- wmh-analysis.Rproj  <- R project file for this repository
+```
+
 
 ## Getting started
 ### Packages
