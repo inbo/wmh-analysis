@@ -7,7 +7,7 @@ longlimits <- c(min(c(data$long))-0.5,max(c(data$long))+0.5)
 latlimits <- c(min(c(data$lat))-0.5,max(c(data$lat))+0.5)
 
 # create df for country polygons
-political <- fortify(countries, region = "admin")
+political <- fortify(countries, region = "NAME_EN")
 political$country <- political$id
 political$group <- ifelse(political$country %in% unique(data$country) & political$piece == 1,1,0)
 
@@ -65,7 +65,4 @@ source(here("src", "sidescript_readDEM.R"))
 
 #### SAVE OUTPUT  
 ##############################
-ggsave('Fig1A_Routes&Stopovers-bw-v24062018.tiff',dpi=300,width=8,height=8)
-
-
-
+ggsave(here('figures','Fig1A_Routes&Stopovers-bw.tiff'),dpi=300,width=8,height=8)
