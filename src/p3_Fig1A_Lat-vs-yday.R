@@ -36,4 +36,4 @@ ggplot() +
 		axis.text		= element_text(size=10,face='bold'),
 		axis.title		= element_text(size=12,face='bold'))
 
-ggsave(here('figures', 'FigS1_Lat-vs-yday.tiff'),dpi=300,width=8,height=4)
+ggsave(here('reports','figures', 'FigS1_Lat-vs-yday.tiff'),dpi=300,width=8,height=4)
