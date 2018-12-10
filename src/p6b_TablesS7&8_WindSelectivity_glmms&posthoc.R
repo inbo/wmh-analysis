@@ -39,11 +39,11 @@ sx <- subset(dayset,dayset$season == "Spring" & dayset$continent == "Africa")
 
 	a <- cbind(a1,mods)
 
-	write.csv(a,'WindSelectivity_ModSel_SpringAfrica.csv')
+	write_csv(a, here('reports','tables','WindSelectivity_ModSel_SpringAfrica.csv'))
 #this produces table S7
 	
 library(emmeans)
 posthoc <- emmeans(m0d, list(pairwise ~ pop:travel), adjust = "tukey")
 xx <- as.data.frame(posthoc[[2]])
-write.csv(xx,'WindSelectivity_POSTHOC_SpringAFrica.csv')
+write_csv(xx, here('reports','tables','WindSelectivity_POSTHOC_SpringAFrica.csv'))
 # this produces Table S8
