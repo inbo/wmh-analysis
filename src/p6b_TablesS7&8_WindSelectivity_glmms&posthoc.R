@@ -17,7 +17,7 @@ ggplot() + geom_boxplot(data=dayset,aes(y=tail,x=paste(pop,travel),fill=pop,line
 		axis.text		= element_text(size=10,face='bold'),
 		axis.title		= element_text(size=12,face='bold'))
 
-ggsave('Fig3_WindSelectivity.tiff',dpi=300,width=5,height=4.5)
+ggsave(here('reports','figures','Fig3_WindSelectivity.tiff'),dpi=300,width=5,height=4.5)
 
 
 # the following procedure needs to be repeated for every season and continent
