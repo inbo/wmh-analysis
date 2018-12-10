@@ -25,6 +25,7 @@ vignettes/*.pdf
 # Shiny token, see https://shiny.rstudio.com/articles/shinyapps.html
 rsconnect/
 .Rproj.user
-# Exclude the maps from version control
+# Exclude the maps and reports from version control
 data/maps
+data/maps/ne_50m_admin_0_countries
 reports
