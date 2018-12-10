@@ -65,4 +65,4 @@ source(here("src", "sidescript_readDEM.R"))
 
 #### SAVE OUTPUT  
 ##############################
-ggsave(here('figures','Fig1A_Routes&Stopovers-bw.tiff'),dpi=300,width=8,height=8)
+ggsave(here('reports','figures','Fig1A_Routes&Stopovers-bw.tiff'),dpi=300,width=8,height=8)
