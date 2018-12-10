@@ -27,4 +27,4 @@ rsconnect/
 .Rproj.user
 # Exclude the maps from version control
 data/maps
-figures
+reports
