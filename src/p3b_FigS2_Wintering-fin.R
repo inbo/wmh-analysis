@@ -68,5 +68,5 @@ ggplot() +
 		axis.text		= element_text(size=8,face='bold'),
 		axis.title		= element_text(size=10,face='bold'))
 
-ggsave(here('figures','FigS2.tiff'),dpi=300,width=7,height=5)
+ggsave(here('reports', 'figures','FigS2.tiff'),dpi=300,width=7,height=5)
 
