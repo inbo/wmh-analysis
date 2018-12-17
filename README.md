@@ -54,7 +54,12 @@ In order to run the scripts properly, the installation of the following R-packag
 
 
 ### Data
+#### Project data
 
+
+#### External GIS data
+* ne_50m_admin_0_countries: shapefile containing country boundaries, source: Natural Earth ( https://www.naturalearthdata.com/downloads/50m-cultural-vectors/50m-admin-0-countries-2/)
+* alt_30s_bil: raster file containing a DEM of the world, source: worldclim, version 1.4 (http://biogeo.ucdavis.edu/data/climate/worldclim/1_4/grid/cur/alt_30s_bil.zip)
 
 ## Workflow
 
