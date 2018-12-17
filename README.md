@@ -54,10 +54,24 @@ In order to run the scripts properly, the installation of the following R-packag
 
 
 ### Data
-#### Project data
+#### Project data (accessible in this repo)
+* annotation.csv: annotated version of the Belgian and Dutch dataset. Wouter Vansteelant determined the start and end dates of migratory and non-migratory periods through expert interpretation of tracks in Google Earth.
+    * Bird name [`name`]
+	* Migratory cycle [`cycle`] (winter, spring, summer, autumn + year)
+	* Starting date [`date`]
+    * Behaviour type [`type`] (breeding, dead, migration, move, pre-migration, winter.stage1, winter.stage2, winter.stage3)
+    * Criteria for selection in analysis ([`complete`], [`use.date`])
+* annotation-swedes.csv: annotated version of the Swedish dataset. Wouter Vansteelant determined the start and end dates of migratory and non-migratory periods through expert interpretation of tracks in Google Earth.
+    * Bird name [`name`]
+	* Migratory cycle [`cycle`] (winter, spring, summer, autumn + year)
+	* Starting date [`date`]
+    * Behaviour type [`type`] (breeding, dead, migration, move, pre-migration, winter.stage1, winter.stage2)
+    * Criteria for selection in analysis ([`complete`], [`use.date`])
+* MH-resampled-23092017.csv: Belgian and Dutch tracking data downloaded from the UvA-BiTS database on September 23rd, 2017
+* swedes.csv: Swedish tracking data
+* weather.csv: daily tailwind conditions calculated using the method of [Klaassen et al. (2010)](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1600-048X.2010.05058.x). u- and v-wind components were obtained from the NOAA NCEP global atmospheric reanalysis model.
 
-
-#### External GIS data
+#### External GIS data (available through web links)
 * ne_50m_admin_0_countries: shapefile containing country boundaries, source: Natural Earth ( https://www.naturalearthdata.com/downloads/50m-cultural-vectors/50m-admin-0-countries-2/)
 * alt_30s_bil: raster file containing a DEM of the world, source: worldclim, version 1.4 (http://biogeo.ucdavis.edu/data/climate/worldclim/1_4/grid/cur/alt_30s_bil.zip)
 
