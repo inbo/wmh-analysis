@@ -1,6 +1,8 @@
-download.file("http://biogeo.ucdavis.edu/data/climate/worldclim/1_4/grid/cur/alt_30s_bil.zip", "data/maps/alt_30s_bil.zip")
-unzip(zipfile = "data/maps/alt_30s_bil.zip", exdir = "data/maps/alt_30s_bil")
-file.remove("data/maps/alt_30s_bil.zip")
+if(!dir.exists("data/maps/alt_30s_bil")) {
+  download.file("http://biogeo.ucdavis.edu/data/climate/worldclim/1_4/grid/cur/alt_30s_bil.zip", "data/maps/alt_30s_bil.zip")
+  unzip(zipfile = "data/maps/alt_30s_bil.zip", exdir = "data/maps/alt_30s_bil")
+  file.remove("data/maps/alt_30s_bil.zip")
+}
 
 dem <- raster(here("data", "maps", "alt_30s_bil", "alt.bil"))
 
