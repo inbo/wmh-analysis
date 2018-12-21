@@ -108,9 +108,9 @@ data <- data[-which(data$name == "Ben" & data$dt == as.POSIXct(strptime("2016-11
 ################################################
 library(rgdal);library(sp);library(raster)
 
-if(!dir.exists("data/maps/ne_50m_admin_0_countries")) {
-  download.file("https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/50m/cultural/ne_50m_admin_0_countries.zip","data/maps/ne_50m_admin_0_countries.zip")
-  unzip(zipfile = "data/maps/ne_50m_admin_0_countries.zip", exdir = "data/maps/ne_50m_admin_0_countries")
+if(!dir.exists(here("data","maps", "ne_50m_admin_0_countries"))) {
+  download.file("https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/50m/cultural/ne_50m_admin_0_countries.zip",here("data","maps","ne_50m_admin_0_countries.zip"))
+  unzip(zipfile = here("data","maps","ne_50m_admin_0_countries.zip"), exdir = here("data", "maps", "ne_50m_admin_0_countries"))
   file.remove("data/maps/ne_50m_admin_0_countries.zip")
 }
 
