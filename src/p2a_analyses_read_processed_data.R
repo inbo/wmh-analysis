@@ -107,9 +107,16 @@ data <- data[-which(data$name == "Ben" & data$dt == as.POSIXct(strptime("2016-11
 #### STEP 4: ANNOTATE GEOGRAPHICAL INFORMATION
 ################################################
 library(rgdal);library(sp);library(raster)
+
+if(!dir.exists(here("data","maps", "ne_50m_admin_0_countries"))) {
+  download.file("https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/50m/cultural/ne_50m_admin_0_countries.zip",here("data","maps","ne_50m_admin_0_countries.zip"))
+  unzip(zipfile = here("data","maps","ne_50m_admin_0_countries.zip"), exdir = here("data", "maps", "ne_50m_admin_0_countries"))
+  file.remove("data/maps/ne_50m_admin_0_countries.zip")
+}
+
 countries <- shapefile(here("data", "maps", "ne_50m_admin_0_countries/ne_50m_admin_0_countries.shp"))
 
-countries <- countries[countries$continent %in% c("Europe","Africa"),]
+countries <- countries[countries$CONTINENT %in% c("Europe","Africa"),]
 
 np <- data[,c("name","dt","long","lat")]
 coordinates(np) <- ~ long + lat
@@ -117,17 +124,15 @@ proj4string(np) <- proj4string(countries)
 
 ## Extract country per point
 require(spatialEco)
-out <- point.in.poly(np, countries["admin"])
+out <- point.in.poly(np, countries["NAME_EN"])
 out <- as.data.frame(out)
 colnames(out)[3] <- "country"
 data <- merge(data,out[,c("name","dt","country")],all.x=T)
 
 ## Extract continent per point
-out <- point.in.poly(np, countries["continent"])
+out <- point.in.poly(np, countries["CONTINENT"])
 out <- as.data.frame(out)
-
+colnames(out)[3] <- "continent"
 data <- merge(data,out[,c("name","dt","continent")],all.x=T)
 data$continent <- ifelse(is.na(data$continent) == T,'sea',as.character(data$continent))
 data$continent <- factor(as.factor(data$continent),levels=c("Europe","Africa","sea"))
-
-

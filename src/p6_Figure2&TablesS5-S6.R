@@ -67,7 +67,7 @@ p8 <- ggplot(data=full,aes(y=stop.days.spr,x=dep.spr.yday, group=pop,col=pop,fil
 
 
 p<-grid.arrange(p1,p3,p5,p7,p2,p4,p6,p8,ncol=4)
-ggsave(plot=p,'Fig2_CorrelationsInTiming.tiff',dpi=300,width=8,height=4)
+ggsave(plot=p,here('reports','figures','Fig2_CorrelationsInTiming.tiff'),dpi=300,width=8,height=4)
 
 
 #### TABLE S5: MODEL RELATIONSHIPS OF ARRIVAL TIMING VS DEPARTURE AND STOP DAYS (REPEAT ONCE PER SEASON)
@@ -101,7 +101,7 @@ ss <- full
 
 	a <- cbind(a2,mods)
 
-	write.csv(a,'TableS5_GLLM-Arrival-SPRING.csv')
+	write_csv(a,here('reports','tables','TableS5_GLLM-Arrival-SPRING.csv'))
 
 
 #### TABLE S6: MODEL RELATIONSHIP OF STOP DAYS WT DEPARTURE (REPEAT ONCE PER SEASON)
@@ -125,7 +125,7 @@ ss <- full
 
 	a <- cbind(a2,mods)
 
-	write.csv(a,'TableS6_GLLM-Stops-vs-Dep-AUTUMN.csv')
+	write_csv(a,here('reports','tables','TableS6_GLLM-Stops-vs-Dep-AUTUMN.csv'))
 
 
 ####################################################################################

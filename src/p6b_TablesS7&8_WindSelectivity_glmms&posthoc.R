@@ -17,7 +17,7 @@ ggplot() + geom_boxplot(data=dayset,aes(y=tail,x=paste(pop,travel),fill=pop,line
 		axis.text		= element_text(size=10,face='bold'),
 		axis.title		= element_text(size=12,face='bold'))
 
-ggsave('Fig3_WindSelectivity.tiff',dpi=300,width=5,height=4.5)
+ggsave(here('reports','figures','Fig3_WindSelectivity.tiff'),dpi=300,width=5,height=4.5)
 
 
 # the following procedure needs to be repeated for every season and continent
@@ -39,11 +39,11 @@ sx <- subset(dayset,dayset$season == "Spring" & dayset$continent == "Africa")
 
 	a <- cbind(a1,mods)
 
-	write.csv(a,'WindSelectivity_ModSel_SpringAfrica.csv')
+	write_csv(a, here('reports','tables','WindSelectivity_ModSel_SpringAfrica.csv'))
 #this produces table S7
 	
 library(emmeans)
 posthoc <- emmeans(m0d, list(pairwise ~ pop:travel), adjust = "tukey")
 xx <- as.data.frame(posthoc[[2]])
-write.csv(xx,'WindSelectivity_POSTHOC_SpringAFrica.csv')
+write_csv(xx, here('reports','tables','WindSelectivity_POSTHOC_SpringAFrica.csv'))
 # this produces Table S8

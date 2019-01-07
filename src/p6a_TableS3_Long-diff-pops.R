@@ -99,7 +99,7 @@ long.55.aut$model <- "long.55.aut"
 
 
 long.zones <- rbind(long.25.spr,long.35.spr,long.45.spr,long.55.spr,long.25.aut,long.35.aut,long.45.aut,long.55.aut)
-write.csv(long.zones,'TableS3_PopDifferencesLongitudes_MixedAnova.csv')
+write_csv(long.zones,here('reports','tables','TableS3_PopDifferencesLongitudes_MixedAnova.csv'))
 
 
 

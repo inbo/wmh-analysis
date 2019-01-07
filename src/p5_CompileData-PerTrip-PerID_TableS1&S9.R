@@ -157,7 +157,7 @@ nr.trips <- rbind(nr.sprs,nr.auts)
 
 df <- merge(df,nr.trips,all.x=T)
 
-write.csv(df,'TableS1_IndividualTiming&Stops_v11102018.csv')
+write_csv(df, here('reports', 'tables','TableS1_IndividualTiming&Stops.csv'))
 
 
 
@@ -188,5 +188,4 @@ stopovers <- merge(nr.stops.mean,nr.stops.sd,all.x=T)
 stopovers <- merge(stopovers,dur.stops.mean,all.x=T)
 stopovers <- merge(stopovers,dur.stops.sd,all.x=T)
 
-write.csv(stopovers,'TableS9_StopoversPerRegionandSeason_v11102018.csv')
-
+write_csv(stopovers,here('reports', 'tables','TableS9_StopoversPerRegionandSeason.csv'))

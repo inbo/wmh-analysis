@@ -38,7 +38,7 @@ ggplot() +
 ## Add tracks
 	geom_path(data=move,aes(x=long,y=lat,group=migr,col=ID),size=.6)+
 ## Add wintering sites
-	geom_point(data=wsegs,aes(x=w.long,y=w.lat,size=w.dur,col=ID,fill=ID))+
+	geom_point(data=wsegs,aes(x=w.long,y=w.lat,size=as.numeric(w.dur),col=ID,fill=ID))+
 #	scale_colour_manual(values=c("LC"="blue","SW"="red"))+
 #	scale_fill_manual(values=c("LC"="blue","SW"="red"))+
 	scale_colour_manual(name="ID",values=c("BE_M1"="cyan3","BE_M2"="darkorange2","BE_M3"="magenta2",
@@ -50,13 +50,13 @@ ggplot() +
 							   "SW_F1"="cadetblue3","SW_F3"="tomato3","SW_M1"="springgreen2",
 							   "SW_M2"="khaki2"))+
 	scale_size_continuous(name="Stopover duration",range=c(2,5),breaks=c(1,30,60,90,120),labels=c("1-29","30-59","60-89","90-119","120-153"))+
-	geom_text(data=wsegs,aes(x=w.long+0.4,y=w.lat+0.3,label=lab,col=ID),size=4,fontface='bold')+
+	geom_text(data=wsegs,aes(x=w.long+0.4,y=w.lat+0.3,label=lab,col=ID),size=4,fontface='bold', show.legend=FALSE)+
 	geom_point(data=wsegs,aes(x=w.long,y=w.lat),size=1.2,col='black')+
 ## Add stopovers during movements
 #	geom_point(data=segs[which(segs$type2 %in% c("move")),],aes(x=st.long,y=st.lat,col=name,size=st.dur),alpha=.5)+
 ## Layout map
 	coord_quickmap(xlim=longlimits,ylim=latlimits,expand=FALSE) + 
-	theme_bw() + facet_grid(.~season) +	xlab("\nLong[?]") + ylab ("Lat[?]\n") +
+	theme_bw() + facet_grid(.~season) +	xlab("\nLong[°]") + ylab ("Lat[°]\n") +
 ## Layout text items
 	theme(legend.position = 'right',
 	  	legend.direction= 'vertical',
@@ -68,5 +68,5 @@ ggplot() +
 		axis.text		= element_text(size=8,face='bold'),
 		axis.title		= element_text(size=10,face='bold'))
 
-ggsave('FigS2-v22102018.tiff',dpi=300,width=7,height=5)
+ggsave(here('reports', 'figures','FigS2.tiff'),dpi=300,width=7,height=5)
 
