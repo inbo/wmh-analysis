@@ -15,7 +15,6 @@ political$group <- ifelse(political$country %in% unique(data$country) & politica
 source(here("src", "sidescript_readDEM.R"))
 
 # Load Google Earth map
-#library(ggmap)
 #africa <- get_map(location=c(-4,30), zoom = 4, maptype ='satellite')	
 
 #### PRODUCE MAP IN GGPLOT2   

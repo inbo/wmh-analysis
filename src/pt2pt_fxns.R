@@ -13,7 +13,6 @@ pt2pt.back.vdist <- function(altitude){
 ## A function to calculate the distances between consecutive points ##
 ## Output in meters ##
 pt2pt.distance <- function(latitude, longitude){
-	require(fossil)
 	distance <- c(deg.dist(lat1=latitude[1:(length(latitude)-1)], long1=longitude[1:(length(longitude)-1)], lat2=latitude[2:length(latitude)], long2=longitude[2:length(longitude)]),NA)*1000
 	return(distance)
 }
@@ -21,7 +20,6 @@ pt2pt.distance <- function(latitude, longitude){
 ## A function to calculate the backward distances between consecutive points ##
 ## Output in meters #
 pt2pt.back.distance <- function(latitude, longitude){
-	require(fossil)
 	distance <- c(NA,deg.dist(lat1=latitude[1:(length(latitude)-1)], long1=longitude[1:(length(longitude)-1)], lat2=latitude[2:length(latitude)], long2=longitude[2:length(longitude)]))*1000
 	return(distance)
 }
@@ -43,7 +41,6 @@ pt2pt.back.duration <- function(datetime, output.units='secs'){
 ## A function to calculate the movement direction beteen consecutive points ##
 ## Output in degrees ##
 pt2pt.direction <- function(latitude,longitude){
-	require(fossil)
 	## First calculate direction ##
 	direction <- c(earth.bear(long1=longitude[1:(length(longitude)-1)], lat1=latitude[1:(length(latitude)-1)], long2=longitude[2:length(longitude)], lat2=latitude[2:length(latitude)]),NA)
 	## Adjust direction (on scale from 0 to 360) to GPS scale (on scale from -180 to 180) ##
@@ -60,7 +57,6 @@ pt2pt.speed <- function(distance, duration){
 
 ## A function to calculate 1) the distance from a point to a static point and 2) a flag indicating whether the distance is within a threshold ##
 pt2pt.range <- function(latitude, longitude, ptofinterest.lat, ptofinterest.lon, threshold=1){
-	require(fossil)
 	range.distance <- deg.dist(lat1=latitude, long1=longitude, lat2=ptofinterest.lat, long2=ptofinterest.lon)*1000
 	is.in.range <- ifelse(range.distance < threshold, 1, 0)
 

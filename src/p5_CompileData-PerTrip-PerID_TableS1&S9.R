@@ -129,7 +129,6 @@ full3 <- rbind(full2a,full2b)
 
 ## AGGREGATE TO INDIVIDUAL LEVEL
 ################################################################################
-library(reshape2)
 
 df <- aggregate(full3[,c("arr","dep","stop.days","tailwind","dur")],by=list(full3$ID,full3$season),FUN="na.mean")
 colnames(df)[1:2] <- c("ID","season")

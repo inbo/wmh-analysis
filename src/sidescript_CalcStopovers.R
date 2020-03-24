@@ -1,5 +1,3 @@
-
-
 ### Generate table with duration and location of stop-overs (incl premigr and winter and breeding stages)
 stat <- subset(data,data$type %in% c("winter.stage1","winter.stage2","winter.stage3") | (data$type2 %in% c("migration","move") & data$travel == 0))
 

@@ -2,8 +2,6 @@
 ## To do this we compare longitude in each latitudinal band of 5 degrees, using a mixed model
 ## accounting for randomly varying intercepts
 
-library(emmeans)
-
 ### STEP 1: aggregate longitudes per latitudinal band and season
 data$zone <- round(data$lat / 5) * 5
 

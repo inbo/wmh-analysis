@@ -16,7 +16,6 @@ swedes <- swedes[,c("dev","name","dt","lat","long","alt")]
 swedes$dt <- as.POSIXct(strptime(swedes$dt, format="%Y-%m-%d %H:%M:%S"), tz='UTC')
 
 ## extract year and month columns for tracking swedes and nests
-library(lubridate)
 swedes$date <- as.Date(swedes$dt)
 swedes$mth <- as.numeric(month(swedes$dt))
 swedes$yr <- as.numeric(year(swedes$dt))

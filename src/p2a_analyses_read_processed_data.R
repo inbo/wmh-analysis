@@ -1,9 +1,3 @@
-library(lubridate);library(circular);library(ggplot2)
-library(maptools);library(lattice);library(fossil)
-library(RColorBrewer)
-library(here)
-library(readr)
-
 #### STEP 1: GATHER ALL DATA
 #############################
 # gather INBO and WGK data from csv produced previously, containing tracks
@@ -106,7 +100,6 @@ data <- data[-which(data$name == "Ben" & data$dt == as.POSIXct(strptime("2016-11
 
 #### STEP 4: ANNOTATE GEOGRAPHICAL INFORMATION
 ################################################
-library(rgdal);library(sp);library(raster)
 
 if(!dir.exists(here("data","maps", "ne_50m_admin_0_countries"))) {
   download.file("https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/50m/cultural/ne_50m_admin_0_countries.zip",here("data","maps","ne_50m_admin_0_countries.zip"))
@@ -123,7 +116,6 @@ coordinates(np) <- ~ long + lat
 proj4string(np) <- proj4string(countries)
 
 ## Extract country per point
-require(spatialEco)
 out <- point.in.poly(np, countries["NAME_EN"])
 out <- as.data.frame(out)
 colnames(out)[3] <- "country"

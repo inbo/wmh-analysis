@@ -1,4 +1,3 @@
-
 ##### WV determined the start and end dates of migratory and
 ##### non-migratory periods through expert interpretation of 
 ##### tracks in GE. We here annotate our dataset according to
@@ -45,7 +44,6 @@ behaviour <- rbind(behaviour,swedes.behaviour)
 data <- merge(data,behaviour[,c("name","date","cycle","type2","type","complete")],all.x=T)
 
 # Fill NA?s with last known annual cycle
-library(zoo)
 data <- data[order(data$name,data$dt),]
 data$type <- na.locf(data$type)
 data$type2 <- na.locf(data$type2)

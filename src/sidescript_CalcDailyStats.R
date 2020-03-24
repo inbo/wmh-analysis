@@ -45,7 +45,6 @@ daylocs <- merge(start.locs,end.locs,by="indday")
 
 ### CALCULATE DAILY DISTANCE AND DIRECTON 
 ##################################################
-library(fossil)
 # calculate daily distance
 daylocs$daily.dist <- deg.dist(daylocs$stlon,daylocs$stlat,daylocs$endlon,daylocs$endlat)*1000
 daylocs$daily.dir <- earth.bear(daylocs$stlon,daylocs$stlat,daylocs$endlon,daylocs$endlat)

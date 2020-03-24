@@ -1,5 +1,4 @@
 ### GENERATE FIG 2: dependencies of annual timing
-library(gridExtra)
 
 p1 <- ggplot(data=full,aes(y=arr.aut.yday,x=dep.aut.yday, group=pop,col=pop,fill=pop)) +
 #		geom_smooth(method='glm',formula=y~x,aes(group=name),fill='grey80',linetype='dashed',size=.6)+
@@ -71,10 +70,6 @@ ggsave(plot=p,here('reports','figures','Fig2_CorrelationsInTiming.tiff'),dpi=300
 
 
 #### TABLE S5: MODEL RELATIONSHIPS OF ARRIVAL TIMING VS DEPARTURE AND STOP DAYS (REPEAT ONCE PER SEASON)
-
-library(lme4)
-require(MASS)
-require(car) 
 
 ss <- full
 
@@ -168,8 +163,6 @@ ss <- full
 #p<-grid.arrange(p1,p2,p3,p4,ncol=2)
 #ggsave(plot=p,'Fig2_StopDays-vs-dep-wind.tiff',dpi=300,width=6,height=5)
 
-#require(MASS)
-#require(car) 
 #ss <- full
 
 #	m0i <- lmer(stop.days.spr ~ dep.spr.yday * tailwind.spr + pop + (1|ID),data=ss,REML=FALSE)

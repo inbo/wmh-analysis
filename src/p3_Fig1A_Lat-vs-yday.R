@@ -1,4 +1,3 @@
-
 ### LATITUDE VS TIME
 ggplot() +
 # Add tracks
