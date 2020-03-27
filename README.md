@@ -74,42 +74,95 @@ These scripts are available in [`src/resampling`](src/resampling) and were used 
 
 ## Data
 
-### Project data (accessible in this repo)
+### Source data
 
-- `annotation.csv`: annotated version of the Belgian and Dutch dataset. Wouter Vansteelant determined the start and end dates of migratory and non-migratory periods through expert interpretation of tracks in Google Earth.
-    - Bird name [`name`]
-	- Migratory cycle [`cycle`] (winter, spring, summer, autumn + year)
-	- Starting date [`date`]
-    - Behaviour type [`type`] (breeding, dead, migration, move, pre-migration, winter.stage1, winter.stage2, winter.stage3)
-    - Criteria for selection in analysis ([`complete`], [`use.date`])
-- `annotation-swedes.csv`: annotated version of the Swedish dataset. Wouter Vansteelant determined the start and end dates of migratory and non-migratory periods through expert interpretation of tracks in Google Earth.
-    - Bird name [`name`]
-	- Migratory cycle [`cycle`] (winter, spring, summer, autumn + year)
-	- Starting date [`date`]
-    - Behaviour type [`type`] (breeding, dead, migration, move, pre-migration, winter.stage1, winter.stage2)
-    - Criteria for selection in analysis ([`complete`], [`use.date`])
-- `MH-resampled-23092017.csv`: Belgian and Dutch tracking data downloaded from the UvA-BiTS database on September 23rd, 2017
-	- Device and individual code ([`dev`], [`name`]
-	- Coordinates ([`lat`], [`lon`], [`alt`])
-	- Date and time
-		- Date time [`dt`]
-		- Year [`yr`]
-		- [`season`] (spring/autumn)
-		- Julian time [`julian`]
-		- day of year [`yday`]
-	- Data provider [`origin`]
-	- Derived codes ([`indday`] (name_julian), [`migr`] (name_yr_season))
-	- Calculated parameters using functions in script [`pt2pt_fxns`]
-		- Distance [`dist`]
-		- Duration [`dur`]
-		- Speed ([`spd`] = [`dist`]/[`dur`])		 
-- `swedes.csv`: Swedish tracking data
-- `weather.csv`: daily tailwind conditions calculated using the method of [Klaassen et al. (2010)](https://doi.org/10.1111/j.1600-048X.2010.05058.x). u- and v-wind components were obtained from the NOAA NCEP global atmospheric reanalysis model.
+Source data are available in [`data/raw`](data/raw).
 
-### External GIS data (available through web links)
+#### annotation.csv
 
-- `ne_50m_admin_0_countries`: shapefile containing country boundaries, source: Natural Earth ( https://www.naturalearthdata.com/downloads/50m-cultural-vectors/50m-admin-0-countries-2/)
-- `alt_30s_bil`: raster file containing a DEM of the world, source: worldclim, version 1.4 (http://biogeo.ucdavis.edu/data/climate/worldclim/1_4/grid/cur/alt_30s_bil.zip)
+Annotated version of the Belgian and Dutch datasets. Wouter Vansteelant determined the start and end dates of migratory and non-migratory periods through expert interpretation of tracks in Google Earth.
+
+Fields:
+
+- `naam`: bird name
+- `cycle`: migratory cycle (winter, spring, summer, autumn + year)
+- `date`: starting date
+- `type`: behaviour type (breeding, dead, migration, move, pre-migration, winter.stage1, winter.stage2, winter.stage3)
+- `complete`: criterion for selection in analysis
+- `use.date`: criterion for selection in analysis
+
+#### annotation-swedes.csv
+
+Annotated version of the Swedish dataset. Wouter Vansteelant determined the start and end dates of migratory and non-migratory periods through expert interpretation of tracks in Google Earth.
+
+Fields: same as `annotation.csv`
+
+#### MH-resampled-23092017.csv
+
+Belgian and Dutch tracking data downloaded from the UvA-BiTS database on September 23, 2017.
+
+Fields:
+
+- `dev`: device code
+- `name`: bird name
+- `dt`: datetime
+- `lat`: latitude
+- `long`: longitude
+- `alt`: altitude
+- `date`: date component of `dt`
+- `mth`: month
+- `yr`: year
+- `season`: spring/autumn
+- `julian`: Julian time
+- `yday`: day of year
+- `indday`: combination of `name` and `yday`
+- `migr`: combination of `name`, `yr` and `season`
+- `origin`: data provider
+- `dist`: distance (calculated using `pt2pt_fxns.R`)
+- `dur`: duration (calculated using `pt2pt_fxns.R`)
+- `spd`: speed (`dist/dur`, calculated using `pt2pt_fxns.R`)
+- `dist.b`: 
+- `dur.b`: 
+- `spd.b`: 
+- `high`: 
+
+#### swedes.csv
+
+Swedish tracking data, obtained from ...
+
+Fields:
+
+- `dev`: device code
+- `lat`: latitude
+- `long`: longitude
+- `alt`: altitude
+- `dtx`: date time rounded to an hour
+- `dt`: date time
+- `dif`: 
+- `filter`: 
+
+#### weather.csv
+
+Daily tailwind conditions calculated using the method of [Klaassen et al. (2010)](https://doi.org/10.1111/j.1600-048X.2010.05058.x). u- and `v-wind components were obtained from the NOAA NCEP global atmospheric reanalysis model.
+
+Fields:
+
+- `dt`: datetime
+- `date`: date component of `dt`
+- `name`: bird name
+- `indday`: 
+- `u`: 
+- `v`: 
+- `w`: 
+- `alfa`: 
+- `tag2`: 
+
+### External GIS data
+
+These data are downloaded by the scripts into [`data/maps`](data/maps) and available online:
+
+- `ne_50m_admin_0_countries`: shapefile containing country boundaries, source: [Natural Earth](https://www.naturalearthdata.com/downloads/50m-cultural-vectors/50m-admin-0-countries-2/)
+- `alt_30s_bil`: raster file containing a DEM of the world, source: [worldclim, version 1.4](http://biogeo.ucdavis.edu/data/climate/worldclim/1_4/grid/cur/alt_30s_bil.zip)
 
 ## Acknowledgements
 
