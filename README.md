@@ -8,11 +8,11 @@ This repository contains R code for the paper:
 
 To study their migration patterns, the paper makes use of GPS tracking data of 3 breeding populations of _Circus aeruginosus_:
 
-1. Near the Belgium-Netherlands border in the provinces East Flanders (Belgium) and Zeeland (the Netherlands): 4 tracked birds, 
+1. **Belgian dataset**: near the Belgium-Netherlands border in the provinces East Flanders (Belgium) and Zeeland (the Netherlands), 4 tracked birds, 
 data collected by [INBO](www.inbo.be/en), data available at [Anselin et al. (2019)](http://doi.org/10.5281/zenodo.3532941).
-2. The province of Groningen (the Netherlands): 2 tracked birds, data collected by the 
+2. **Dutch dataset**: in the province of Groningen (the Netherlands), 2 tracked birds, data collected by the 
 [Dutch Montagu’s Harrier Foundation](http://werkgroepgrauwekiekendief.nl/), data available at [Koks et al. (2019)](http://doi.org/10.5281/zenodo.3552508).
-3. Southern Sweden: 4 tracked birds, data collected by [Lund University](https://www.lunduniversity.lu.se/).
+3. **Swedish dataset**, in Southern Sweden: 4 tracked birds, data collected by [Lund University](https://www.lunduniversity.lu.se/).
 
 ## Repo structure
 
@@ -70,7 +70,7 @@ These scripts are helper scripts automatically loaded when running the main anal
 
 ### Resampling scripts
 
-These scripts are available in [`src/resampling`](src/resampling) and were used to resample the raw GPS data for the Belgium-Netherlands and Groningen datasets stored in the [UvA-BiTS database](https://www.uva-bits.nl) to an hourly resolution. The resampled data are stored in `data`, so running this code is not required to replicate our analysis.
+These scripts are available in [`src/resampling`](src/resampling) and were used to resample the raw GPS data for the Belgian and Dutch datasets stored in the [UvA-BiTS database](https://www.uva-bits.nl) to an hourly resolution. The resampled data are stored in `data`, so running this code is not required to replicate our analysis.
 
 ## Data
 
