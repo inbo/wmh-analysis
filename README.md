@@ -1,4 +1,4 @@
-# wmh-analysis
+# Analysis of migration patterns of western marsh harriers using GPS tracking data
 
 ## Rationale
 
@@ -43,7 +43,7 @@ Run [`src/p1_loadPackages.R`](src/p1_loadPackages.R) to install and load all req
 
 ### Analysis scripts
 
-These scripts are available in [`src`](src) and can be used to reproduce all figures and analyses from the paper. They are intended to be run consecutively:
+These scripts are available in [`src`](src) and can be used to reproduce all figures and analyses from the paper. They are intended to be run consecutively.
 
 1. `p2a_analyses_read_processed_data.R`: read data files
 2. `p2b_analyses_annotate&clean_processed_data.R`: clean data
@@ -69,11 +69,11 @@ These scripts are helper scripts automatically loaded when running the main anal
 
 ### Resampling scripts
 
-These scripts are available in [`src/resampling`](`src/resampling) and were used to resample the raw GPS data for the Belgium-Netherlands and Groningen datasets stored in the [UvA-BiTS database](https://www.uva-bits.nl) to an hourly resolution. The resampled data are stored in `data`, so running this code is not required to replicate our analysis.
+These scripts are available in [`src/resampling`](src/resampling) and were used to resample the raw GPS data for the Belgium-Netherlands and Groningen datasets stored in the [UvA-BiTS database](https://www.uva-bits.nl) to an hourly resolution. The resampled data are stored in `data`, so running this code is not required to replicate our analysis.
 
-### Data
+## Data
 
-#### Project data (accessible in this repo)
+### Project data (accessible in this repo)
 
 - `annotation.csv`: annotated version of the Belgian and Dutch dataset. Wouter Vansteelant determined the start and end dates of migratory and non-migratory periods through expert interpretation of tracks in Google Earth.
     - Bird name [`name`]
@@ -105,7 +105,7 @@ These scripts are available in [`src/resampling`](`src/resampling) and were used
 - `swedes.csv`: Swedish tracking data
 - `weather.csv`: daily tailwind conditions calculated using the method of [Klaassen et al. (2010)](https://doi.org/10.1111/j.1600-048X.2010.05058.x). u- and v-wind components were obtained from the NOAA NCEP global atmospheric reanalysis model.
 
-#### External GIS data (available through web links)
+### External GIS data (available through web links)
 
 - `ne_50m_admin_0_countries`: shapefile containing country boundaries, source: Natural Earth ( https://www.naturalearthdata.com/downloads/50m-cultural-vectors/50m-admin-0-countries-2/)
 - `alt_30s_bil`: raster file containing a DEM of the world, source: worldclim, version 1.4 (http://biogeo.ucdavis.edu/data/climate/worldclim/1_4/grid/cur/alt_30s_bil.zip)
