@@ -1,4 +1,4 @@
-### Read packages
+### Function to install new packages
 ipak <- function(pkg) {
   new.pkg <- pkg[!(pkg %in% installed.packages()[, "Package"])]
   if (length(new.pkg)) {
@@ -7,10 +7,12 @@ ipak <- function(pkg) {
   sapply(pkg, require, character.only = TRUE)
 }
 
-# usage
+# Required packages
 packages <- c(
   "ggplot2", "lubridate", "maptools", "circular", "lattice", "fossil",
   "RColorBrewer", "rgdal", "sp", "raster", "here", "readr", "spatialEco", "zoo",
   "RNCEP", "reshape2", "gridExtra", "lme4", "MASS", "car", "emmeans"
 )
+
+# Load/install packages
 ipak(packages)

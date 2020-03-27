@@ -8,7 +8,7 @@ This repository contains R code for the paper:
 
 To study their migration patterns, the paper makes use of GPS tracking data of 3 breeding populations of _Circus aeruginosus_:
 
-1. Near the Belgian-Dutch border in the provinces East Flanders (Belgium) and Zeeland (the Netherlands): 4 tracked birds, 
+1. Near the Belgium-Netherlands border in the provinces East Flanders (Belgium) and Zeeland (the Netherlands): 4 tracked birds, 
 data collected by [INBO](www.inbo.be/en), data available at [Anselin et al. (2019)](http://doi.org/10.5281/zenodo.3532941).
 2. The province of Groningen (the Netherlands): 2 tracked birds, data collected by the 
 [Dutch Montagu’s Harrier Foundation](http://werkgroepgrauwekiekendief.nl/), data available at [Koks et al. (2019)](http://doi.org/10.5281/zenodo.3552508).
@@ -35,11 +35,41 @@ The repository structure is based on [Cookiecutter Data Science](http://drivenda
     └── resampling         : Data resampling scripts
 ```
 
-## Installation
+## Usage
 
 ### Packages
 
-In order to run the scripts properly, run [`src/p1_loadPackages.R`](src/p1_loadPackages.R) to install and load all required packages.
+Run [`src/p1_loadPackages.R`](src/p1_loadPackages.R) to install and load all required packages.
+
+### Analysis scripts
+
+These scripts are available in [`src`](src) and can be used to reproduce all figures and analyses from the paper. They are intended to be run consecutively:
+
+1. `p2a_analyses_read_processed_data.R`: read data files
+2. `p2b_analyses_annotate&clean_processed_data.R`: clean data
+3. `p3_Fig1A_Lat-vs-yday.R`: make figure 1A of the paper
+4. `p3a_Fig1B&C.R`: make figures 1B and 1C
+5. `p3b_FigS2_Wintering-fin.R`: make figure S2
+6. `p4_wind-fin.R`: read wind data and calculate mean daily wind components
+7. `p5_CompileData-PerTrip-PerID_TableS1&S9.R`: make table S1 and S9
+8. `p6_Figure2&TablesS5-S6.R`: make table S5 and S6
+9. `p6_TableS2.R`: make table S2
+10. `p6a_TableS3_Long-diff-pops.R`: make table S3
+11. `p6b_TablesS7&8_WindSelectivity_glmms&posthoc.R`: make table S7 and S8
+
+### Side scripts
+
+These scripts are helper scripts automatically loaded when running the main analysis scripts.
+
+- `pt2pt_fxns.R`: functions to compute distance, duration and speed
+- `sidescript_CalcDailyStats.R`: compute daily statistics
+- `sidescript_CalcStopovers.R`: compute coordinates and duration of stopovers
+- `sidescript_readDEM.R`: read and manipulate DEM for making maps
+- `sidescript_readSwedes.R`: read Swedish dataset, make selection and manipulate data to match with `mh-resampled-23092017`
+
+### Resampling scripts
+
+These scripts are available in [`src/resampling`](`src/resampling) and were used to resample the raw GPS data for the Belgium-Netherlands and Groningen datasets stored in the [UvA-BiTS database](https://www.uva-bits.nl) to an hourly resolution. The resampled data are stored in `data`, so running this code is not required to replicate our analysis.
 
 ### Data
 
@@ -79,34 +109,6 @@ In order to run the scripts properly, run [`src/p1_loadPackages.R`](src/p1_loadP
 
 - `ne_50m_admin_0_countries`: shapefile containing country boundaries, source: Natural Earth ( https://www.naturalearthdata.com/downloads/50m-cultural-vectors/50m-admin-0-countries-2/)
 - `alt_30s_bil`: raster file containing a DEM of the world, source: worldclim, version 1.4 (http://biogeo.ucdavis.edu/data/climate/worldclim/1_4/grid/cur/alt_30s_bil.zip)
-
-## Scripts
-
-### Main scripts
-
-The scripts are supposed to be run consecutively.
-
-- `p2a_analyses_read_processed_data.R`: read data files
-- `p2b_analyses_annotate&clean_processed_data.R`: clean data
-- `p3_Fig1A_Lat-vs-yday.R`: make figure 1A of the paper
-- `p3a_Fig1B&C.R`: make figures 1B and 1C
-- `p3b_FigS2_Wintering-fin.R`: make figure S2
-- `p4_wind-fin.R`: read wind data and calculate mean daily wind components
-- `p5_CompileData-PerTrip-PerID_TableS1&S9.R`: make table S1 and S9
-- `p6_Figure2&TablesS5-S6.R`: make table S5 and S6
-- `p6_TableS2.R`: make table S2
-- `p6a_TableS3_Long-diff-pops.R`: make table S3
-- `p6b_TablesS7&8_WindSelectivity_glmms&posthoc.R`: make table S7 and S8
-- `pt2pt_fxns.R`: functions to compute distance, duration and speed
-
-### Side scripts
-
-These scripts are helper scripts automatically loaded when running the main scripts.
-
-- `sidescript_readSwedes.R`: read Swedish dataset, make selection and manipulate data to match with mh-resampled-23092017
-- `sidescript_CalcDailyStats.R`: compute daily statistics
-- `sidescript_CalcStopovers.R`: compute coordinates and duration of stopovers
-- `sidescript_readDEM.R`: read and manipulate DEM for making maps
 
 ## Acknowledgements
 
