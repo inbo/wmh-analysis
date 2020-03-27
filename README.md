@@ -2,17 +2,17 @@
 
 ## Rationale
 
-This repository contains the R code developed for the research paper on migration patterns of Western Marsh Harriers 
-(Contrasting migration strategies between nearby breeding populations of Marsh Harrier _Circus aeruginosus_ 
-using the West African-Eurasian flyway) by Wouter Vansteelant et al.
+This repository contains R code for the paper:
 
-In this paper, GPS tracking data were used to study the wintering migration patterns of *Circus aeruginosus* of 3 breeding populations:
+> Vansteelant WMG, Klaassen R, Strandberg R, Janssens K, T´Jollyn F, Bouten W, Koks BJ & Anselin A (In press) Western Marsh Harriers _Circus aeruginosus_ from nearby breeding areas migrate along comparable loops but on contrasting schedules in the West African-Eurasian flyway. Journal of Ornithology.
 
-1. near the Belgian-Dutch border in the provinces East-Flanders (Belgium) and Zeeland (the Netherlands) (4 tracked birds, 
-data collection by [INBO](www.inbo.be/en) as part of the Flemish contribution to the [LifeWatch](www.lifewatch.be) observatory), 
-2. in the province of Groningen (the Netherlands) (2 tracked birds, data collection by 
-[Dutch Montagu´s Harrier Foundation](http://werkgroepgrauwekiekendief.nl/)), and
-3. southern Sweden (4 tracked birds, data collection by [Lund University](https://www.lunduniversity.lu.se/)).
+To study their migration patterns, the paper makes use of GPS tracking data of 3 breeding populations of _Circus aeruginosus_:
+
+1. Near the Belgian-Dutch border in the provinces East Flanders (Belgium) and Zeeland (the Netherlands): 4 tracked birds, 
+data collected by [INBO](www.inbo.be/en), data available at [Anselin et al. (2019)](http://doi.org/10.5281/zenodo.3532941).
+2. The province of Groningen (the Netherlands): 2 tracked birds, data collected by the 
+[Dutch Montagu’s Harrier Foundation](http://werkgroepgrauwekiekendief.nl/), data available at [Koks et al. (2019)](http://doi.org/10.5281/zenodo.3552508).
+3. Southern Sweden: 4 tracked birds, data collected by [Lund University](https://www.lunduniversity.lu.se/).
 
 ## Repo structure
 
@@ -104,3 +104,4 @@ These scripts are helper scripts automatically loaded when running the main scri
 
 ## Acknowledgements
 
+This work makes use of data and/or infrastructure provided by INBO and funded by Research Foundation - Flanders (FWO) as part of the Belgian contribution to [LifeWatch](https://lifewatch.be).
