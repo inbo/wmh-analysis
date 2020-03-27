@@ -1,10 +1,10 @@
-if (!dir.exists(here("data", "maps", "alt_30s_bil"))) {
-  download.file("http://biogeo.ucdavis.edu/data/climate/worldclim/1_4/grid/cur/alt_30s_bil.zip", here("data", "maps", "alt_30s_bil.zip"))
-  unzip(zipfile = here("data", "maps", "alt_30s_bil.zip"), exdir = here("data", "maps", "alt_30s_bil"))
-  file.remove(here("data", "maps", "alt_30s_bil.zip"))
+if (!dir.exists(here::here("data", "maps", "alt_30s_bil"))) {
+  download.file("http://biogeo.ucdavis.edu/data/climate/worldclim/1_4/grid/cur/alt_30s_bil.zip", here::here("data", "maps", "alt_30s_bil.zip"))
+  unzip(zipfile = here::here("data", "maps", "alt_30s_bil.zip"), exdir = here::here("data", "maps", "alt_30s_bil"))
+  file.remove(here::here("data", "maps", "alt_30s_bil.zip"))
 }
 
-dem <- raster(here("data", "maps", "alt_30s_bil", "alt.bil"))
+dem <- raster(here::here("data", "maps", "alt_30s_bil", "alt.bil"))
 
 latlimits <- c(min(data$lat) - 0.5, max(data$lat) + 0.5)
 longlimits <- c(min(data$long) - 0.5, max(data$long) + 0.5)

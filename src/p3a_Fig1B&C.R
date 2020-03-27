@@ -10,7 +10,7 @@ political$country <- political$id
 political$group <- ifelse(political$country %in% unique(data$country) & political$piece == 1, 1, 0)
 
 # Read DEM
-source(here("src", "sidescript_readDEM.R"))
+source(here::here("src", "sidescript_readDEM.R"))
 
 # Load Google Earth map
 # africa <- get_map(location=c(-4,30), zoom = 4, maptype ='satellite')
@@ -67,4 +67,4 @@ ggplot() +
 
 #### SAVE OUTPUT
 ##############################
-ggsave(here("reports", "figures", "Fig1A_Routes&Stopovers-bw.tiff"), dpi = 300, width = 8, height = 8)
+ggsave(here::here("reports", "figures", "Fig1A_Routes&Stopovers-bw.tiff"), dpi = 300, width = 8, height = 8)

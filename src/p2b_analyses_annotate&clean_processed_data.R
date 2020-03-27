@@ -5,7 +5,7 @@
 
 #### STEP 1: Process Dutch/Belgian annotation data
 ###################################################
-behaviour <- read_csv(here("data", "annotation-v5.csv"))
+behaviour <- read_csv(here::here("data", "raw", "annotation-v5.csv"))
 behaviour$date <- as.Date(behaviour$date)
 colnames(behaviour)[1] <- "name"
 
@@ -23,7 +23,7 @@ behaviour$type2 <- ifelse(behaviour$type2 %in% c("move", "pre-migration") & beha
 
 #### STEP 2: Process Swedish annotation data
 ###################################################
-swedes.behaviour <- read_csv(here("data", "annotation_swedes-v4.csv"))
+swedes.behaviour <- read_csv(here::here("data", "raw", "annotation_swedes-v4.csv"))
 swedes.behaviour$date <- as.Date(swedes.behaviour$date)
 colnames(swedes.behaviour)[1] <- "name"
 

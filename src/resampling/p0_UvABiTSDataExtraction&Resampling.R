@@ -3,8 +3,8 @@
 ######################################################
 
 ### NOTE: only registered UvA-BiTS users can access the raw data through an ODBC.
-## Unregistered users cannot actually run the code below, but we provide for the sake of
-## transparancy.
+## Unregistered users cannot actually run the code below, but we provide it for
+## the sake of transparancy.
 
 library(RODBC)
 db.file <- "GPS" # "GPS" is the name of the ODBC on my work station
@@ -153,4 +153,4 @@ data$spd.b <- data$dist.b / data$dur.b
 source("Rfunction_resampling_movement.R")
 data_resample <- moveTimeSample(data, data$dt, data$dev, 60, 10, subset = TRUE)
 
-write.csv(data_resample, "MH-resampled-23092017.csv")
+write_csv(data_resample, here::here("data", "raw", "MH-resampled-23092017.csv"))

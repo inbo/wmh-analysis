@@ -45,4 +45,4 @@ ggplot() +
     axis.title = element_text(size = 12, face = "bold")
   )
 
-ggsave(here("reports", "figures", "FigS1_Lat-vs-yday.tiff"), dpi = 300, width = 8, height = 4)
+ggsave(here::here("reports", "figures", "FigS1_Lat-vs-yday.tiff"), dpi = 300, width = 8, height = 4)

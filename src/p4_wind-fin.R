@@ -1,6 +1,6 @@
 ### I previously extracted all wind data at morning, noon and evening of each day (cf Klaassen et al 2010)
 ### Read wind data and calculate mean daily wind components
-wind <- read_csv(here("data", "weather.csv"))
+wind <- read_csv(here::here("data", "raw", "weather.csv"))
 wind <- wind[, c("indday", "tag2", "u", "v")]
 
 wind.6 <- wind[which(wind$tag2 == 6), ]

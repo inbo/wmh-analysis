@@ -24,7 +24,8 @@ The repository structure is based on [Cookiecutter Data Science](http://drivenda
 ├── wmh-analysis.Rproj     : RStudio project file
 ├── .gitignore             : Files and directories to be ignored by git
 │
-├── data                   : Data used for this analysis
+├── data                   
+│   ├── raw                : Data used for this analysis
 │   └── maps               : Maps downloaded by scripts (ignored by git) GENERATED
 │
 ├── reports
@@ -65,7 +66,7 @@ These scripts are helper scripts automatically loaded when running the main anal
 - `sidescript_CalcDailyStats.R`: compute daily statistics
 - `sidescript_CalcStopovers.R`: compute coordinates and duration of stopovers
 - `sidescript_readDEM.R`: read and manipulate DEM for making maps
-- `sidescript_readSwedes.R`: read Swedish dataset, make selection and manipulate data to match with `mh-resampled-23092017`
+- `sidescript_readSwedes.R`: read Swedish dataset, make selection and manipulate data to match with `MH-resampled-23092017.csv`
 
 ### Resampling scripts
 
