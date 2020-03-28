@@ -8,11 +8,11 @@ This repository contains R code for the paper:
 
 To study their migration patterns, the paper makes use of GPS tracking data of 3 breeding populations of _Circus aeruginosus_:
 
-1. **Belgian dataset**: near the Belgium-Netherlands border in the provinces East Flanders (Belgium) and Zeeland (the Netherlands), 4 tracked birds, 
-data collected by [INBO](www.inbo.be/en), data available at [Anselin et al. (2019)](http://doi.org/10.5281/zenodo.3532941).
-2. **Dutch dataset**: in the province of Groningen (the Netherlands), 2 tracked birds, data collected by the 
-[Dutch Montagu’s Harrier Foundation](http://werkgroepgrauwekiekendief.nl/), data available at [Koks et al. (2019)](http://doi.org/10.5281/zenodo.3552508).
-3. **Swedish dataset**, in Southern Sweden: 4 tracked birds, data collected by [Lund University](https://www.lunduniversity.lu.se/).
+Shortname | Population | Tracked birds | Data collected by | Movebank study | Deposited data
+--- | --- | --- | --- | --- | ---
+**Belgian dataset** | Near the Belgium-Netherlands border in the provinces East Flanders (Belgium) and Zeeland (the Netherlands) | 4 | [Research Institute for Nature and Forest (INBO)](https//www.inbo.be) | [604806671](https://www.movebank.org/cms/webapp?gwt_fragment=page=studies,path=study604806671) | [Anselin et al. (2019)](http://doi.org/10.5281/zenodo.3532941)
+**Dutch dataset** | In the province of Groningen (the Netherlands) | 2 | [Dutch Montagu’s Harrier Foundation](https://grauwekiekendief.nl/) | [922263102](https://www.movebank.org/cms/webapp?gwt_fragment=page=studies,path=study922263102) | [Koks et al. (2019)](http://doi.org/10.5281/zenodo.3552508)
+**Swedish dataset** | In Southern Sweden | 4 | [Lund University](https://www.lunduniversity.lu.se) | [49909355](https://www.movebank.org/cms/webapp?gwt_fragment=page=studies,path=study49909355) | -
 
 ## Repo structure
 
