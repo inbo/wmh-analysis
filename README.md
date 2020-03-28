@@ -99,7 +99,7 @@ Fields: same as `annotation.csv`
 
 #### MH-resampled-23092017.csv
 
-Belgian and Dutch tracking data downloaded from the UvA-BiTS database on September 23, 2017.
+Belgian and Dutch tracking data downloaded from the UvA-BiTS database on September 23, 2017 (also available on Movebank and Zenodo, see above).
 
 Fields:
 
@@ -113,22 +113,22 @@ Fields:
 - `mth`: month
 - `yr`: year
 - `season`: spring/autumn
-- `julian`: Julian time
+- `julian`: Julian date
 - `yday`: day of year
-- `indday`: combination of `name` and `yday`
-- `migr`: combination of `name`, `yr` and `season`
+- `indday`: combination of `name` and `julian`, thus providing a unique identifier for each bird-day
+- `migr`: combination of `name`, `yr` and `season`, thus providing a unique identifier for each migratory trip
 - `origin`: data provider
 - `dist`: distance (calculated using `pt2pt_fxns.R`)
 - `dur`: duration (calculated using `pt2pt_fxns.R`)
 - `spd`: speed (`dist/dur`, calculated using `pt2pt_fxns.R`)
-- `dist.b`: 
-- `dur.b`: 
-- `spd.b`: 
-- `high`: 
+- `dist.b`: the distance between point i and i-1 (`dist` is from i to i+1)
+- `dur.b`: the duration between point i and i-1 (`dur` is from i to i+1)
+- `spd.b`: the speed between point i and i-1 (`spd` is from i to i+1)
+- `high`: classifier marking records with unrealistically high speed values
 
 #### swedes.csv
 
-Swedish tracking data, obtained from ...
+Swedish tracking data, obtained from Raymond Klaassen (also available on Movebank, see above).
 
 Fields:
 
@@ -138,28 +138,28 @@ Fields:
 - `alt`: altitude
 - `dtx`: date time rounded to an hour
 - `dt`: date time
-- `dif`: 
-- `filter`: 
+- `dif`: -
+- `filter`: criterion for selection in analysis (1 = use, 0 = do not use)
 
 #### weather.csv
 
-Daily tailwind conditions calculated using the method of [Klaassen et al. (2010)](https://doi.org/10.1111/j.1600-048X.2010.05058.x). u- and `v-wind components were obtained from the NOAA NCEP global atmospheric reanalysis model.
+Table containing wind parameters as extracted with RNCEP for the fixes obtained nearest to 6:00, 12:00 or 18:00 UTC on each day. These variables are used to estimate mean daily wind conditions analogous to [Klaassen et al. (2010)](https://doi.org/10.1111/j.1600-048X.2010.05058.x).
 
 Fields:
 
 - `dt`: datetime
 - `date`: date component of `dt`
 - `name`: bird name
-- `indday`: 
-- `u`: 
-- `v`: 
-- `w`: 
-- `alfa`: 
-- `tag2`: 
+- `indday`: combination of `name` and Julian date, thus providing a unique identifier for each bird-day
+- `u`: u-component (i.e. zonal component) of the wind vector (positive values towards east, negative towards west)
+- `v`: v-component (i.e. meridionaal component) of the wind vector (positive values towards north, negative towards south)
+- `w`: wind strength
+- `alfa`: wind direction (in degrees relative to north)
+- `tag2`: label indicating whether this is a fix
 
 ### External GIS data
 
-These data are downloaded by the scripts into [`data/maps`](data/maps) and available online:
+These data are downloaded by the scripts into [`data/maps`](data/maps) and are also available online:
 
 - `ne_50m_admin_0_countries`: shapefile containing country boundaries, source: [Natural Earth](https://www.naturalearthdata.com/downloads/50m-cultural-vectors/50m-admin-0-countries-2/)
 - `alt_30s_bil`: raster file containing a DEM of the world, source: [worldclim, version 1.4](http://biogeo.ucdavis.edu/data/climate/worldclim/1_4/grid/cur/alt_30s_bil.zip)
