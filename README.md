@@ -1,5 +1,7 @@
 # Analysis of migration patterns of western marsh harriers using GPS tracking data
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4059204.svg)](https://doi.org/10.5281/zenodo.4059204)
+
 ## Rationale
 
 This repository contains analysis code for the paper:
