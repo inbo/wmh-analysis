@@ -4,7 +4,7 @@
 
 This repository contains R code for the paper:
 
-> Vansteelant WMG, Klaassen R, Strandberg R, Janssens K, T´Jollyn F, Bouten W, Koks BJ & Anselin A (In press) Western Marsh Harriers _Circus aeruginosus_ from nearby breeding areas migrate along comparable loops but on contrasting schedules in the West African-Eurasian flyway. Journal of Ornithology.
+> Vansteelant WMG, Klaassen R, Strandberg R, Janssens K, T'Jollyn F, Bouten W, Koks BJ & Anselin A (2020) Western Marsh Harriers _Circus aeruginosus_ from nearby breeding areas migrate along comparable loops, but on contrasting schedules in the West African–Eurasian flyway. Journal of Ornithology 161, 953–965. <https://doi.org/10.1007/s10336-020-01785-6>
 
 To study their migration patterns, the paper makes use of GPS tracking data of 3 breeding populations of _Circus aeruginosus_:
 
